@@ -1,47 +1,45 @@
-# generator-travis [![Build Status](https://secure.travis-ci.org/iamstarkov/generator-travis.png?branch=master)](https://travis-ci.org/iamstarkov/generator-travis)
+# generator-travis
 
-> [Yeoman](http://yeoman.io) generator
+[![NPM version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Dependency Status][depstat-image]][depstat-url]
 
+>
 
-## Getting Started
+## Install
 
-### What is Yeoman?
+    npm install --global yo generator-travis
+    # or
+    npm install --save generator-travis
 
-Trick question. It's not a thing. It's this guy:
+## Usage
 
-![](http://i.imgur.com/JHaAlBJ.png)
+    yo travis
 
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
+Or if you want to use this generator as composed generator, then do like this:
 
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
-```bash
-npm install -g yo
+```js
+module.exports = yeoman.generators.Base.extend({
+  init: function() { /* … */ },
+  writing: function() {
+    this.composeWith('travis', {}, {
+      local: require.resolve('generator-travis/generators/app/index.js')
+    });
+  },
+  install: function () { /* … */ }
+});
 ```
-
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-travis from npm, run:
-
-```bash
-npm install -g generator-travis
-```
-
-Finally, initiate the generator:
-
-```bash
-yo travis
-```
-
-### Getting To Know Yeoman
-
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
 
 
 ## License
 
-MIT
+MIT © [Vladimir Starkov](https://iamstarkov.com)
+
+[npm-url]: https://npmjs.org/package/generator-travis
+[npm-image]: https://img.shields.io/npm/v/generator-travis.svg?style=flat-square
+
+[travis-url]: https://travis-ci.org/iamstarkov/generator-travis
+[travis-image]: https://img.shields.io/travis/iamstarkov/generator-travis.svg?style=flat-square
+
+[depstat-url]: https://david-dm.org/iamstarkov/generator-travis
+[depstat-image]: https://david-dm.org/iamstarkov/generator-travis.svg?style=flat-square
