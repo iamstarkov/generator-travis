@@ -9,14 +9,21 @@
 ## Install
 
     npm install --global yo generator-travis
-    # or
-    npm install --save generator-travis
 
 ## Usage
 
     yo travis
 
-Or if you want to use this generator as composed generator, then do like this:
+## Composability
+
+> Composability is a way to combine smaller parts to make one large thing. Sort of [like Voltron ®][voltron]  
+> — [Yeoman docs](http://yeoman.io/authoring/composability.html)
+
+### Add it to your generator
+
+    npm install --save generator-travis
+
+### Compose it with your generator
 
 ```js
 module.exports = yeoman.generators.Base.extend({
@@ -30,18 +37,17 @@ module.exports = yeoman.generators.Base.extend({
 });
 ```
 
-## Requirements
+[voltron]: http://25.media.tumblr.com/tumblr_m1zllfCJV21r8gq9go11_250.gif
 
-This generator should be suitable for these generators:
+## Requirements or public contract
 
-* [nm][nm], [config][nm-config]
-* [node][node], [config][node-config]
+This generator will be "up-to-date" and suitable for _at least_ these generators:
+
+* [node][node]
+* [nm][nm]
 
 [nm]: https://github.com/sindresorhus/generator-nm/
-[nm-config]: https://github.com/sindresorhus/generator-nm/blob/master/app/templates/travis.yml
 [node]: https://github.com/yeoman/generator-node
-[node-config]: https://github.com/yeoman/generator-node/blob/master/generators/travis/templates/travis.yml
-
 
 ## License
 
