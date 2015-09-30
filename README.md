@@ -19,6 +19,9 @@
 > Composability is a way to combine smaller parts to make one large thing. Sort of [like Voltron ®][voltron]  
 > — [Yeoman docs](http://yeoman.io/authoring/composability.html)
 
+Just plug in _travis_ into your generator and forget about keeping travis configs up to date.
+This package will do it for you and your generator’s consumers. Everybody wins.
+
 ### Add it to your generator
 
     npm install --save generator-travis
