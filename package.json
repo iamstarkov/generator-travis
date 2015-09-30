@@ -17,7 +17,22 @@
     "generators"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "boilerplate",
+    "node",
+    "starter",
+    "kit",
+    "yeoman",
+    "plugin",
+    "boilerplate",
+    "template",
+    "scaffold",
+    "module",
+    "node_module",
+    "node-module",
+    "travis",
+    "javascript",
+    "npm"
   ],
   "dependencies": {
     "yeoman-generator": "^0.19.0"
