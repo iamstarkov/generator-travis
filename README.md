@@ -30,6 +30,18 @@ module.exports = yeoman.generators.Base.extend({
 });
 ```
 
+## Requirements
+
+This generator should be suitable for these generators:
+
+* [nm][nm], [config][nm-config]
+* [node][node], [config][node-config]
+
+[nm]: https://github.com/sindresorhus/generator-nm/
+[nm-config]: https://github.com/sindresorhus/generator-nm/blob/master/app/templates/travis.yml
+[node]: https://github.com/yeoman/generator-node
+[node-config]: https://github.com/yeoman/generator-node/blob/master/generators/travis/templates/travis.yml
+
 
 ## License
 
