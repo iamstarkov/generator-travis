@@ -1,6 +1,6 @@
 {
   "name": "generator-travis",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Get up-to-date travis config",
   "license": "MIT",
   "main": "app/index.js",
