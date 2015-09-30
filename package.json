@@ -35,7 +35,7 @@
     "npm"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.19.0"
+    "yeoman-generator": "^0.20.0"
   },
   "devDependencies": {
     "mocha": "*"
