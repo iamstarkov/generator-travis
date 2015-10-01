@@ -29,14 +29,8 @@ This package will do it for you and your generator’s consumers. Everybody wins
 ### Compose it with your generator
 
 ```js
-module.exports = yeoman.generators.Base.extend({
-  init: function() { /* … */ },
-  writing: function() {
-    this.composeWith('travis', {}, {
-      local: require.resolve('generator-travis/generators/app/index.js')
-    });
-  },
-  install: function () { /* … */ }
+this.composeWith('travis', {}, {
+  local: require('generator-travis')
 });
 ```
 
