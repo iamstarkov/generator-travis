@@ -30,7 +30,7 @@ This package will do it for you and your generator’s consumers. Everybody wins
 
 ```js
 this.composeWith('travis', {}, {
-  local: require('generator-travis')
+  local: require.resolve('generator-travis/generators/app')
 });
 ```
 
