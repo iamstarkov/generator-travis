@@ -11,7 +11,8 @@
     "url": "https://github.com/iamstarkov"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "postpublish": "git push origin master --tags"
   },
   "files": [
     "generators"
