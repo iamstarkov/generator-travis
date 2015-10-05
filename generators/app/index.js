@@ -19,7 +19,7 @@ module.exports = yeoman.generators.Base.extend({
 
       this.fs.write(
         this.destinationPath('.travis.yml'),
-        yaml.stringify(resultConfig, 2, 2)
+        yaml.stringify(resultConfig, 3, 2)
       );
     },
   },
