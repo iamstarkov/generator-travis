@@ -2,25 +2,41 @@
 var yeoman = require('yeoman-generator');
 var yaml = require('yamljs');
 var deepAssign = require('deep-assign');
+var sort = require('sort-object');
+
+var keysOrder = [
+  'language',
+  'node_js',
+  'install',
+  'cache',
+  'before_script',
+  'script',
+  'after_success',
+  'after_failure',
+  'after_script',
+  'before_deploy',
+  'deploy',
+  'after_deploy',
+  'env'
+];
+
+function sortByKeys(a, b) {
+  return keysOrder.indexOf(a) < keysOrder.indexOf(b) ? -1 : 1;
+}
 
 module.exports = yeoman.generators.Base.extend({
   writing: {
     app: function () {
-      console.log('this.options.config', this.options.config)
       var optionConfig =  this.options.config || {};
-      var currentConfigFile = this.destinationPath('.travis.yml');
-      var configFile = this.templatePath('travisyml');
-
-      // Re-read the content at this point because a composed generator might modify it.
-      var currentConfig = this.fs.exists(currentConfigFile) ? yaml.parse(this.fs.read(currentConfigFile)) : {};
-      var config = yaml.parse(this.fs.read(configFile));
-
-      // Let's extend package.json so we're not overwriting user previous fields
-      var resultConfig = deepAssign({}, currentConfig, optionConfig, config);
-
+      var existingConfig = this.fs.exists(this.destinationPath('.travis.yml'))
+            ? yaml.parse(this.fs.read(this.destinationPath('.travis.yml')))
+            : {};
+      var defaultConfig = yaml.parse(this.fs.read(this.templatePath('travisyml')));
+      var resultConfig = deepAssign({}, existingConfig, optionConfig, defaultConfig);
+      var sortedResultConfig = sort(resultConfig, { sort: sortByKeys });
       this.fs.write(
         this.destinationPath('.travis.yml'),
-        yaml.stringify(resultConfig, 3, 2)
+        yaml.stringify(sortedResultConfig, 3, 2)
       );
     },
   },

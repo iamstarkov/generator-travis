@@ -37,6 +37,7 @@
   ],
   "dependencies": {
     "deep-assign": "^1.0.0",
+    "sort-object": "^3.0.0",
     "yamljs": "^0.2.4",
     "yeoman-generator": "^0.20.0"
   },
