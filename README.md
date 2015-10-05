@@ -45,7 +45,7 @@ If you want somehow extend default config, define you extra fields to `config` f
 ```js
 writing: function () {
   this.composeWith('travis', { options: {
-    config: { after_script: 'npm run coveralls' }
+    config: { after_script: ['npm run coveralls'] }
   }}, {
     local: require.resolve('generator-travis/generators/app')
   });
