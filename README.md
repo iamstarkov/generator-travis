@@ -6,6 +6,8 @@
 
 > Get up-to-date travis config
 
+You will get up-do-date travis config and will not loose existing config.
+
 ## Install
 
     npm install --global yo generator-travis
@@ -29,9 +31,25 @@ This package will do it for you and your generator’s consumers. Everybody wins
 ### Compose it with your generator
 
 ```js
-this.composeWith('travis', {}, {
-  local: require.resolve('generator-travis/generators/app')
-});
+writing: function () {
+  this.composeWith('travis', {}, {
+    local: require.resolve('generator-travis/generators/app')
+  });
+},
+```
+
+### Compose it with your generator using `config` option
+
+If you want somehow extend default config, define you extra fields to `config` field.
+
+```js
+writing: function () {
+  this.composeWith('travis', { options: {
+    config: { after_script: 'npm run coveralls' }
+  }}, {
+    local: require.resolve('generator-travis/generators/app')
+  });
+},
 ```
 
 [voltron]: http://25.media.tumblr.com/tumblr_m1zllfCJV21r8gq9go11_250.gif

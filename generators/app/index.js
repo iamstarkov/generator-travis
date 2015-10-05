@@ -6,7 +6,8 @@ var deepAssign = require('deep-assign');
 module.exports = yeoman.generators.Base.extend({
   writing: {
     app: function () {
-      var optionConfig =  this.option.config || {};
+      console.log('this.options.config', this.options.config)
+      var optionConfig =  this.options.config || {};
       var currentConfigFile = this.destinationPath('.travis.yml');
       var configFile = this.templatePath('travisyml');
 
