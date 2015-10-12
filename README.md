@@ -6,7 +6,8 @@
 
 > Get up-to-date travis config
 
-You will get up-do-date travis config and will not loose existing config.
+You will get up-do-date travis config and will not loose existing config.  
+Up to date config contains current node versions: stable (v4), 0.12 and 0.10.
 
 ## Install
 
