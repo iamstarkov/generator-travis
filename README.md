@@ -17,6 +17,20 @@ Up to date config contains current node versions: stable (v4), 0.12 and 0.10.
 
     yo travis
 
+## NodeJS versions in the config
+
+Every LTS-supported versions are included. Once version version become
+LTS-unsuported it will be removed from this config and generator
+will get minor version update.
+
+* NodeJS v0.10 will be removed October 1, 2016.
+* NodeJS v0.12 will be removed April 1, 2017.
+* NodeJS v4.2.0 will be removed April 1, 2018.
+
+More about NodeJS Long-term Support you can read in [NodeJS/LTS repo][NodeJS/LTS].
+
+[NodeJS/LTS]: https://github.com/nodejs/LTS/
+
 ## Composability
 
 > Composability is a way to combine smaller parts to make one large thing. Sort of [like Voltron ®][voltron]  
@@ -48,16 +62,6 @@ this.composeWith('travis', { options: {
 ```
 
 [voltron]: http://25.media.tumblr.com/tumblr_m1zllfCJV21r8gq9go11_250.gif
-
-## Requirements or public contract
-
-This generator will be "up-to-date" and suitable for _at least_ these generators:
-
-* [node][node]
-* [nm][nm]
-
-[nm]: https://github.com/sindresorhus/generator-nm/
-[node]: https://github.com/yeoman/generator-node
 
 ## License
 
