@@ -29,28 +29,22 @@ This package will do it for you and your generator’s consumers. Everybody wins
 
     npm install --save generator-travis
 
-### Compose it with your generator
+#### Compose it
 
 ```js
-writing: function () {
-  this.composeWith('travis', {}, {
-    local: require.resolve('generator-travis/generators/app')
-  });
-},
+this.composeWith('travis', {}, {
+  local: require.resolve('generator-travis/generators/app')
+});
 ```
-
-### Compose it with your generator using `config` option
 
 If you want somehow extend default config, define you extra fields to `config` field.
 
 ```js
-writing: function () {
-  this.composeWith('travis', { options: {
-    config: { after_script: ['npm run coveralls'] }
-  }}, {
-    local: require.resolve('generator-travis/generators/app')
-  });
-},
+this.composeWith('travis', { options: {
+  config: { after_script: ['npm run coveralls'] }
+}}, {
+  local: require.resolve('generator-travis/generators/app')
+});
 ```
 
 [voltron]: http://25.media.tumblr.com/tumblr_m1zllfCJV21r8gq9go11_250.gif
