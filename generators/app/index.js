@@ -1,8 +1,8 @@
 'use strict';
 var yeoman = require('yeoman-generator');
 var yaml = require('yamljs');
-var deepAssign = require('deep-assign');
 var sort = require('sort-object');
+var mergeAndConcat = require('merge-and-concat');
 
 var keysOrder = [
   'language',
@@ -32,7 +32,7 @@ module.exports = yeoman.generators.Base.extend({
             ? yaml.parse(this.fs.read(this.destinationPath('.travis.yml')))
             : {};
       var defaultConfig = yaml.parse(this.fs.read(this.templatePath('travisyml')));
-      var resultConfig = deepAssign({}, existingConfig, optionConfig, defaultConfig);
+      var resultConfig = mergeAndConcat(existingConfig, optionConfig, defaultConfig);
       var sortedResultConfig = sort(resultConfig, { sort: sortByKeys });
       this.fs.write(
         this.destinationPath('.travis.yml'),

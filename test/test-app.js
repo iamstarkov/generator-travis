@@ -7,7 +7,7 @@ var yaml = require('yamljs');
 
 var existingConfig = {
   language: 'node_js',
-  node_js: [ 'stable' ],
+  node_js: [ 'stable', 'iojs' ],
   before_script: ['bower install'],
 };
 var yamlExistingConfig = yaml.stringify(existingConfig, 3, 2)
@@ -16,7 +16,10 @@ describe('travis:app', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withOptions({
-        config: { after_script: ['npm run coveralls'] }
+        config: {
+          node_js: [ 'iojs' ],
+          after_script: ['npm run coveralls']
+        }
       })
       .on('ready', function (gen) {
         gen.fs.write(gen.destinationPath('.travis.yml'), yamlExistingConfig);
@@ -41,6 +44,13 @@ describe('travis:app', function () {
     assert.fileContent(
       '.travis.yml',
       /npm run coveralls/
+    );
+  });
+
+  it('uses config with extra node versions from options', function () {
+    assert.fileContent(
+      '.travis.yml',
+      /iojs/
     );
   });
 });
