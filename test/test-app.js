@@ -47,7 +47,7 @@ describe('travis:app', function () {
     );
   });
 
-  it.only('uses config with extra node versions from options', function () {
+  it('uses config with extra node versions from options', function () {
     assert.fileContent(
       '.travis.yml',
       /iojs/
