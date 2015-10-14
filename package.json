@@ -37,7 +37,9 @@
   ],
   "dependencies": {
     "merge-and-concat": "^1.0.0",
+    "ramda": "^0.18.0",
     "sort-object": "^3.0.0",
+    "travis-config-keys": "^1.0.0",
     "yamljs": "^0.2.4",
     "yeoman-generator": "^0.20.0"
   },

@@ -3,25 +3,11 @@ var yeoman = require('yeoman-generator');
 var yaml = require('yamljs');
 var sort = require('sort-object');
 var mergeAndConcat = require('merge-and-concat');
-
-var keysOrder = [
-  'language',
-  'node_js',
-  'install',
-  'cache',
-  'before_script',
-  'script',
-  'after_success',
-  'after_failure',
-  'after_script',
-  'before_deploy',
-  'deploy',
-  'after_deploy',
-  'env'
-];
+var travisConfigKeys = require('travis-config-keys');
+var ramda = require('ramda');
 
 function sortByKeys(a, b) {
-  return keysOrder.indexOf(a) < keysOrder.indexOf(b) ? -1 : 1;
+  return travisConfigKeys.indexOf(a) < travisConfigKeys.indexOf(b) ? -1 : 1;
 }
 
 module.exports = yeoman.generators.Base.extend({
@@ -34,6 +20,7 @@ module.exports = yeoman.generators.Base.extend({
       var defaultConfig = yaml.parse(this.fs.read(this.templatePath('travisyml')));
       var resultConfig = mergeAndConcat(existingConfig, optionConfig, defaultConfig);
       var sortedResultConfig = sort(resultConfig, { sort: sortByKeys });
+      sortedResultConfig.node_js = ramda.uniq(sortedResultConfig.node_js);
       this.fs.write(
         this.destinationPath('.travis.yml'),
         yaml.stringify(sortedResultConfig, 3, 2)
