@@ -9,6 +9,9 @@
 You will get up-do-date travis config and will not loose existing config.  
 Up to date config contains current node versions: stable (v4), 0.12 and 0.10.
 
+It’s easiest way to get up-to-date travis config in your project.  
+And easiest way to stop worrying about travis config if you are maintaining your own custom generators, just compose generator-travis with them.
+
 ## Install
 
     npm install --global yo generator-travis
