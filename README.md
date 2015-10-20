@@ -4,49 +4,58 @@
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][depstat-image]][depstat-url]
 
-> Get up-to-date travis config
+> Keep `.travis.yml` up-to-date
 
-You will get up-do-date travis config and will not loose existing config.  
-Up to date config contains current node versions: stable (v4), 0.12 and 0.10.
+This package is useful if you want to keep your [Travis-CI][travis] configuration up to date effortlessly. Works great with other generators too.
 
-It’s easiest way to get up-to-date travis config in your project.  
-And easiest way to stop worrying about travis config if you are maintaining your own custom generators, just compose generator-travis with them.
+The configuration template includes the following NodeJS versions:
+
+* stable (v4)
+* v0.12
+* 0.10.
+
 
 ## Install
 
-    npm install --global yo generator-travis
-
+```
+  npm install -g yo generator-travis
+```
 ## Usage
 
-    yo travis
+```
+  yo travis
+```
 
 ## NodeJS versions in the config
 
-Every LTS-supported versions are included. Once version version become
-LTS-unsuported it will be removed from this config and generator
-will get minor version update.
+Every LTS-supported version is included.
 
-* NodeJS v0.10 will be removed October 1, 2016.
-* NodeJS v0.12 will be removed April 1, 2017.
-* NodeJS v4.2.0 will be removed April 1, 2018.
+Once a version version becomes
+LTS-unsupported, it will be removed from the config template and this generator
+will get a minor version update.
 
-More about NodeJS Long-term Support you can read in [NodeJS/LTS repo][NodeJS/LTS].
+* NodeJS `v0.10` will be removed **October 1, 2016**.
+* NodeJS `v0.12` will be removed **April 1, 2017**.
+* NodeJS `v4.2.0` will be removed **April 1, 2018**.
+
+[Read more][NodeJS/LTS] about NodeJS long-term support/LTS.
 
 [NodeJS/LTS]: https://github.com/nodejs/LTS/
 
 ## Composability
 
-> Composability is a way to combine smaller parts to make one large thing. Sort of [like Voltron ®][voltron]  
+> Composability is a way to combine smaller parts to make one large thing. Sort of [like Voltron®][voltron]  
 > — [Yeoman docs](http://yeoman.io/authoring/composability.html)
 
-Just plug in _travis_ into your generator and forget about keeping travis configs up to date.
-This package will do it for you and your generator’s consumers. Everybody wins.
+Just plug in _travis_ into your generator and let it handle your `.travis.yml` template for you. Everybody wins.
 
-### Add it to your generator
+### Install
 
-    npm install --save generator-travis
+```
+  npm install -S generator-travis
+```
 
-#### Compose it
+#### Compose
 
 ```js
 this.composeWith('travis', {}, {
@@ -54,7 +63,7 @@ this.composeWith('travis', {}, {
 });
 ```
 
-If you want somehow extend default config, define you extra fields to `config` field.
+Add any extra fields you need to `options.config` to extend the default configuration.
 
 ```js
 this.composeWith('travis', { options: {
@@ -78,3 +87,5 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 
 [depstat-url]: https://david-dm.org/iamstarkov/generator-travis
 [depstat-image]: https://david-dm.org/iamstarkov/generator-travis.svg?style=flat-square
+
+[travis]: https://travis-ci.org/
