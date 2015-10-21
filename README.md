@@ -6,25 +6,27 @@
 
 > Get and keep `.travis.yml` up-to-date effortlessly
 
-This package is useful if you want to keep your [Travis-CI][travis] configuration up to date effortlessly. Works great with other generators too.
+This [Yeoman][yo] generator is useful if you want to get and keep your [Travis-CI][travis] configuration up to date effortlessly. Works great with other generators too.
+
+Travis CI uses `.travis.yml` file in the root of repository to learn about project and how developer wants their builds to be executed. Learn how to [get started building NodeJS projects][nodejs-get-started] and how to [customize your builds][travis-customize].
 
 The configuration template includes the following NodeJS versions:
 
 * stable (v4)
 * v0.12
-* 0.10.
+* 0.10
 
+[yo]: http://yeoman.io/
+[nodejs-get-started]: http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+[travis-customize]: http://docs.travis-ci.com/user/customizing-the-build/
 
 ## Install
 
-```
-  npm install -g yo generator-travis
-```
+    npm install -g yo generator-travis
+
 ## Usage
 
-```
-  yo travis
-```
+    yo travis
 
 ## NodeJS versions in the config
 
@@ -32,7 +34,7 @@ Every LTS-supported version is included.
 
 Once a version version becomes
 LTS-unsupported, it will be removed from the config template and this generator
-will get a minor version update.
+will get a minor version update. The same about new LTS versions.
 
 * NodeJS `v0.10` will be removed **October 1, 2016**.
 * NodeJS `v0.12` will be removed **April 1, 2017**.
@@ -47,13 +49,11 @@ will get a minor version update.
 > Composability is a way to combine smaller parts to make one large thing. Sort of [like Voltron®][voltron]  
 > — [Yeoman docs](http://yeoman.io/authoring/composability.html)
 
-Just plug in _travis_ into your generator and let it handle your `.travis.yml` template for you. Everybody wins.
+Just plug in _travis_ into your generator and let it handle your `.travis.yml` for you. Everybody wins.
 
 ### Install
 
-```
-  npm install -S generator-travis
-```
+    npm install -S generator-travis
 
 #### Compose
 
