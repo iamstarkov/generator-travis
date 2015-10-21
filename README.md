@@ -4,7 +4,7 @@
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][depstat-image]][depstat-url]
 
-> Keep `.travis.yml` up-to-date
+> Get and keep `.travis.yml` up-to-date
 
 This package is useful if you want to keep your [Travis-CI][travis] configuration up to date effortlessly. Works great with other generators too.
 
