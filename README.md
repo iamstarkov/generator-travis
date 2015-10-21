@@ -4,9 +4,8 @@
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][depstat-image]][depstat-url]
 
-> Get and keep `.travis.yml` up-to-date effortlessly
-
-This [Yeoman][yo] generator is useful if you want to get and keep your [Travis-CI][travis] configuration up to date effortlessly. Works great with other generators too.
+> [Yeoman][yo] generator to get and keep `.travis.yml` up-to-date effortlessly.  
+> [Works great with other generators too](#composability).
 
 Travis CI uses `.travis.yml` file in the root of repository to learn about project and how developer wants their builds to be executed. Learn how to [get started building NodeJS projects][nodejs-get-started] and how to [customize your builds][travis-customize].
 
@@ -22,7 +21,7 @@ The configuration template includes the following NodeJS versions:
 
 ## Install
 
-    npm install -g yo generator-travis
+    npm install --global yo generator-travis
 
 ## Usage
 
@@ -53,7 +52,7 @@ Just plug in _travis_ into your generator and let it handle your `.travis.yml` f
 
 ### Install
 
-    npm install -S generator-travis
+    npm install --save generator-travis
 
 #### Compose
 
