@@ -41,7 +41,7 @@
     "sort-object": "^3.0.0",
     "travis-config-keys": "^1.0.0",
     "yamljs": "^0.2.4",
-    "yeoman-generator": "^0.20.0"
+    "yeoman-generator": "^0.21.1"
   },
   "devDependencies": {
     "mocha": "*"
