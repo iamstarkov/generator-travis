@@ -11,7 +11,8 @@ Travis CI uses `.travis.yml` file in the root of repository to learn about proje
 
 The configuration template includes the following NodeJS versions:
 
-* stable (v4)
+* v5
+* v4
 * v0.12
 * 0.10
 
@@ -29,15 +30,15 @@ The configuration template includes the following NodeJS versions:
 
 ## NodeJS versions in the config
 
-Every LTS-supported version is included.
-
-Once a version version becomes
-LTS-unsupported, it will be removed from the config template and this generator
-will get a minor version update. The same about new LTS versions.
+Every LTS-supported version is included plus current one if its not LTS-supported. Once NodeJS versions list is changed this package will get a minor version update.
 
 * NodeJS `v0.10` will be removed **October 1, 2016**.
 * NodeJS `v0.12` will be removed **April 1, 2017**.
 * NodeJS `v4.2.0` will be removed **April 1, 2018**.
+
+NodeJS `v5.0.0` will be removed April 1, 2016 when LTS `v6.0.0` will be released.
+
+![NodeJS LTS Timeline](https://raw.githubusercontent.com/nodejs/LTS/master/schedule.png)
 
 [Read more][NodeJS/LTS] about NodeJS long-term support/LTS.
 
