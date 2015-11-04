@@ -13,7 +13,7 @@ The configuration template includes the following NodeJS versions:
 
 * v5
 * v4
-* v0.12
+* 0.12
 * 0.10
 
 [yo]: http://yeoman.io/
