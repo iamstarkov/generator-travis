@@ -13,17 +13,17 @@ function sortByKeys(a, b) {
 module.exports = yeoman.generators.Base.extend({
   writing: {
     app: function () {
-      var optionConfig =  this.options.config || {};
-      var existingConfig = this.fs.exists(this.destinationPath('.travis.yml'))
+      var optional =  this.options.config || {};
+      var existing = this.fs.exists(this.destinationPath('.travis.yml'))
             ? yaml.parse(this.fs.read(this.destinationPath('.travis.yml')))
             : {};
-      var defaultConfig = yaml.parse(this.fs.read(this.templatePath('travisyml')));
-      var resultConfig = mergeAndConcat(existingConfig, optionConfig, defaultConfig);
-      var sortedResultConfig = sort(resultConfig, { sort: sortByKeys });
-      sortedResultConfig.node_js = ramda.uniq(sortedResultConfig.node_js);
+      var defaults = yaml.parse(this.fs.read(this.templatePath('travisyml')));
+      var results = mergeAndConcat(existing, optional, defaults);
+      var sortedResults = sort(results, { sort: sortByKeys });
+      sortedResults.node_js = ramda.uniq(sortedResults.node_js);
       this.fs.write(
         this.destinationPath('.travis.yml'),
-        yaml.stringify(sortedResultConfig, 3, 2)
+        yaml.stringify(sortedResults, 3, 2)
       );
     },
   },
