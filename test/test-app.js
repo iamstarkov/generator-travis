@@ -28,29 +28,18 @@ describe('travis:app', function () {
   });
 
   it('creates config', function () {
-    assert.file([
-      '.travis.yml'
-    ]);
+    assert.file('.travis.yml');
   });
 
   it('extends existing config', function () {
-    assert.fileContent(
-      '.travis.yml',
-      /bower install/
-    );
+    assert.fileContent('.travis.yml', /bower install/);
   });
 
   it('uses config from options', function () {
-    assert.fileContent(
-      '.travis.yml',
-      /npm run coveralls/
-    );
+    assert.fileContent('.travis.yml', /npm run coveralls/);
   });
 
   it('uses config with extra node versions from options', function () {
-    assert.fileContent(
-      '.travis.yml',
-      /iojs/
-    );
+    assert.fileContent('.travis.yml', /iojs/);
   });
 });
