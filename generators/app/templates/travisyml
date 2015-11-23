@@ -1,4 +1,8 @@
 language: node_js
+cache:
+  directories:
+    - node_modules
+    - .nvm
 node_js:
   - v5
   - v4
