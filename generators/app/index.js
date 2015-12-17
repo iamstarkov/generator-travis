@@ -11,18 +11,29 @@ function sortByKeys(a, b) {
 }
 
 module.exports = yeoman.generators.Base.extend({
+  constructor: function () {
+    yeoman.generators.Base.apply(this, arguments);
+
+    this.option('generateInto', {
+      type: String,
+      required: false,
+      defaults: '',
+      desc: 'Relocate the location of the generated files.'
+    });
+  },
+
   writing: {
     app: function () {
       var optional =  this.options.config || {};
-      var existing = this.fs.exists(this.destinationPath('.travis.yml'))
-            ? yaml.parse(this.fs.read(this.destinationPath('.travis.yml')))
+      var existing = this.fs.exists(this.destinationPath(this.options.generateInto, '.travis.yml'))
+            ? yaml.parse(this.fs.read(this.destinationPath(this.options.generateInto, '.travis.yml')))
             : {};
       var defaults = yaml.parse(this.fs.read(this.templatePath('travisyml')));
       var results = mergeAndConcat(existing, optional, defaults);
       var sortedResults = sort(results, { sort: sortByKeys });
       sortedResults.node_js = ramda.uniq(sortedResults.node_js);
       this.fs.write(
-        this.destinationPath('.travis.yml'),
+        this.destinationPath(this.options.generateInto, '.travis.yml'),
         yaml.stringify(sortedResults, 3, 2)
       );
     },
