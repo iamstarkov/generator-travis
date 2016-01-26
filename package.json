@@ -8,7 +8,7 @@
   "author": {
     "name": "Vladimir Starkov",
     "email": "iamstarkov@gmail.com",
-    "url": "https://github.com/iamstarkov"
+    "url": "https://iamstarkov.com"
   },
   "scripts": {
     "test": "mocha",
