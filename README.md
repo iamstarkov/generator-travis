@@ -69,7 +69,7 @@ Add any extra fields you need to `options.config` to extend the default configur
 this.composeWith('travis', { options: { config: {
   after_script: ['npm run coveralls']
 }}}, {
-  local: require.resolve('generator-travis/generators/app')
+  local: require.resolve('generator-travis')
 });
 ```
 
