@@ -1,6 +1,6 @@
 {
   "name": "generator-travis",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Yeoman generator to get and keep `.travis.yml` up-to-date effortlessly",
   "license": "MIT",
   "main": "generators/app/index.js",
