@@ -3,7 +3,7 @@
   "version": "1.2.2",
   "description": "Yeoman generator to get and keep `.travis.yml` up-to-date effortlessly",
   "license": "MIT",
-  "main": "app/index.js",
+  "main": "generators/app/index.js",
   "repository": "iamstarkov/generator-travis",
   "author": {
     "name": "Vladimir Starkov",
