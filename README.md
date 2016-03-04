@@ -59,7 +59,7 @@ Just plug in _travis_ into your generator and let it handle your `.travis.yml` f
 
 ```js
 this.composeWith('travis', {}, {
-  local: require.resolve('generator-travis/generators/app')
+  local: require.resolve('generator-travis')
 });
 ```
 
