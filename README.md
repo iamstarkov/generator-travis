@@ -11,6 +11,7 @@ Travis CI uses `.travis.yml` file in the root of repository to learn about proje
 
 The configuration template includes the following NodeJS versions:
 
+* v6
 * v5
 * v4
 * 0.12
