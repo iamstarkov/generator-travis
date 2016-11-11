@@ -15,7 +15,6 @@ The configuration template includes the following NodeJS versions:
 * v5
 * v4
 * 0.12
-* 0.10
 
 [yo]: http://yeoman.io/
 [nodejs-get-started]: http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
@@ -33,7 +32,6 @@ The configuration template includes the following NodeJS versions:
 
 Every LTS-supported version is included plus current one if its not LTS-supported. Once NodeJS versions list is changed this package will get a minor version update.
 
-* NodeJS `v0.10` will be removed **October 1, 2016**.
 * NodeJS `v0.12` will be removed **April 1, 2017**.
 * NodeJS `v4.2.0` will be removed **April 1, 2018**.
 
