@@ -10,9 +10,9 @@ function sortByKeys(a, b) {
   return travisConfigKeys.indexOf(a) < travisConfigKeys.indexOf(b) ? -1 : 1;
 }
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = yeoman.Base.extend({
   constructor: function () {
-    yeoman.generators.Base.apply(this, arguments);
+    yeoman.Base.apply(this, arguments);
 
     this.option('generateInto', {
       type: String,
