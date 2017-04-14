@@ -1,6 +1,6 @@
 {
   "name": "generator-travis",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Yeoman generator to get and keep `.travis.yml` up-to-date effortlessly",
   "license": "MIT",
   "main": "generators/app/index.js",
@@ -37,16 +37,16 @@
     "npm"
   ],
   "dependencies": {
-    "merge-and-concat": "^1.0.0",
+    "merge-and-concat": "^1.0.2",
     "ramda": "^0.23.0",
-    "sort-object": "^3.0.0",
-    "travis-config-keys": "^1.0.0",
-    "yamljs": "^0.2.4",
+    "sort-object": "^3.0.2",
+    "travis-config-keys": "^1.0.3",
+    "yamljs": "^0.2.9",
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
-    "mocha": "*",
+    "mocha": "^3.2.0",
     "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^1.5.1"
+    "yeoman-test": "^1.6.0"
   }
 }
