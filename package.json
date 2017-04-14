@@ -37,16 +37,16 @@
     "npm"
   ],
   "dependencies": {
-    "merge-and-concat": "^1.0.0",
-    "ramda": "^0.22.1",
-    "sort-object": "^3.0.0",
-    "travis-config-keys": "^1.0.0",
-    "yamljs": "^0.2.4",
+    "merge-and-concat": "^1.0.2",
+    "ramda": "^0.23.0",
+    "sort-object": "^3.0.2",
+    "travis-config-keys": "^1.0.3",
+    "yamljs": "^0.2.9",
     "yeoman-generator": "^0.24.1"
   },
   "devDependencies": {
-    "mocha": "*",
-    "yeoman-assert": "^2.2.1",
-    "yeoman-test": "^1.5.1"
+    "mocha": "^3.2.0",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
   }
 }
