@@ -11,6 +11,7 @@
     "url": "https://iamstarkov.com"
   },
   "scripts": {
+    "commitmsg": "validate-commit-msg",
     "test": "mocha",
     "tdd": "npm test -- --watch",
     "postpublish": "git push origin master --tags"
@@ -45,7 +46,9 @@
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
+    "husky": "^0.13.3",
     "mocha": "^3.2.0",
+    "validate-commit-msg": "^2.12.1",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.6.0"
   }
