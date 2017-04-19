@@ -11,8 +11,8 @@ function sortByKeys(a, b) {
 }
 
 module.exports = class extends Generator {
-  constructor(...args) {
-    super(...args);
+  constructor(args, opts) {
+    super(args, opts);
 
     this.option('generateInto', {
       type: String,
