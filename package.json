@@ -42,7 +42,7 @@
     "ramda": "^0.23.0",
     "sort-object": "^3.0.2",
     "travis-config-keys": "^1.0.3",
-    "yamljs": "^0.2.9",
+    "yamljs": "^0.2.10",
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
