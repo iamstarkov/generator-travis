@@ -11,6 +11,7 @@
     "url": "https://iamstarkov.com"
   },
   "scripts": {
+    "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "test": "mocha",
     "tdd": "npm test -- --watch",
@@ -38,6 +39,9 @@
     "javascript",
     "npm"
   ],
+  "czConfig": {
+    "path": "cz-conventional-changelog"
+  },
   "dependencies": {
     "merge-and-concat": "^1.0.2",
     "ramda": "^0.23.0",
@@ -47,6 +51,8 @@
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.13.3",
     "mocha": "^3.2.0",
     "semantic-release": "^6.3.2",
