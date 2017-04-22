@@ -1,6 +1,6 @@
 {
   "name": "generator-travis",
-  "version": "1.5.0",
+  "version": "0.0.0-development",
   "description": "Yeoman generator to get and keep `.travis.yml` up-to-date effortlessly",
   "license": "MIT",
   "main": "generators/app/index.js",
@@ -14,7 +14,8 @@
     "commitmsg": "validate-commit-msg",
     "test": "mocha",
     "tdd": "npm test -- --watch",
-    "postpublish": "git push origin master --tags"
+    "postpublish": "git push origin master --tags",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "files": [
     "generators"
@@ -48,6 +49,7 @@
   "devDependencies": {
     "husky": "^0.13.3",
     "mocha": "^3.2.0",
+    "semantic-release": "^6.3.2",
     "validate-commit-msg": "^2.12.1",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.6.0"
