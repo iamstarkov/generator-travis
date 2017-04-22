@@ -15,7 +15,6 @@
     "commitmsg": "validate-commit-msg",
     "test": "mocha",
     "tdd": "npm test -- --watch",
-    "postpublish": "git push origin master --tags",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "files": [
