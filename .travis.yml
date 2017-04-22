@@ -3,3 +3,5 @@ node_js:
   - 7
   - 6
   - 4
+after_success:
+  - semantic-release pre && npm publish && semantic-release post
