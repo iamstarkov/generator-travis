@@ -84,4 +84,5 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 [depstat-url]: https://david-dm.org/iamstarkov/generator-travis
 [depstat-image]: https://david-dm.org/iamstarkov/generator-travis.svg?style=flat-square
 
+
 [travis]: https://travis-ci.org/
