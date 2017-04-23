@@ -18,14 +18,20 @@ module.exports = class extends Generator {
       type: String,
       required: false,
       defaults: '',
-      desc: 'Relocate the location of the generated files.'
+      desc: 'Relocate the location of the generated files.',
     });
   }
 
   writing() {
-    var optional =  this.options.config || {};
-    var existing = this.fs.exists(this.destinationPath(this.options.generateInto, '.travis.yml'))
-      ? yaml.parse(this.fs.read(this.destinationPath(this.options.generateInto, '.travis.yml')))
+    var optional = this.options.config || {};
+    var existing = this.fs.exists(
+      this.destinationPath(this.options.generateInto, '.travis.yml')
+    )
+      ? yaml.parse(
+          this.fs.read(
+            this.destinationPath(this.options.generateInto, '.travis.yml')
+          )
+        )
       : {};
     var defaults = yaml.parse(this.fs.read(this.templatePath('travisyml')));
     var results = mergeAndConcat(existing, optional, defaults);
