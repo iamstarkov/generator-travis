@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+### 1.5.1 (2017-04-22)
+
+
+#### Bug Fixes
+
+* **releasing:** establish new way of releasing package ([222af06b](https://github.com/iamstarkov/generator-travis/commit/222af06b))
+
 ## 1.5.0
 
 * remove 0.12 as deprecated and 5 as non-LTS by [@SBoudrias][] in [#15][]
