@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "merge-and-concat": "^1.0.2",
-    "ramda": "^0.23.0",
+    "ramda": "^0.24.1",
     "sort-object": "^3.0.2",
     "travis-config-keys": "^1.0.3",
     "yamljs": "^0.2.10",
