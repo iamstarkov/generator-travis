@@ -11,9 +11,11 @@ Travis CI uses `.travis.yml` file in the root of repository to learn about proje
 
 The configuration template includes the following NodeJS versions:
 
-* v7
-* v6
-* v4
+* v10 (From 2018-04-30 until **2021-04-01**)
+* [v9][node-9] (Until **2018-06-30**)
+* [v8][node-8] (Until **2019-12-31**)
+* [v6][node-6] (Until **2019-04-18**)
+* [v4][node-4] (Until **2018-04-01**)
 
 [yo]: http://yeoman.io/
 [nodejs-get-started]: http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
@@ -31,14 +33,15 @@ The configuration template includes the following NodeJS versions:
 
 Every LTS-supported version is included plus current one if its not LTS-supported. Once NodeJS versions list is changed this package will get a minor version update.
 
-* NodeJS `v6.x` will be removed **April 18, 2019**.
-* NodeJS `v4.x` will be removed **April 1, 2018**.
+* NodeJS v10 will be added on 2018-04-30 and removed on **2021-04-01**.
+* NodeJS [v9][node-9] will be removed on **2018-06-30**.
+* NodeJS [v8][node-8] will be removed on **2019-12-31**.
+* NodeJS [v6][node-6] will be removed on **2019-04-18**.
+* NodeJS [v4][node-4] will be removed on **2018-04-01**.
 
-![NodeJS LTS Timeline](https://raw.githubusercontent.com/nodejs/LTS/master/schedule.png)
+[![NodeJS LTS Timeline][node-lts-image]][node-lts-url]
 
-[Read more][NodeJS/LTS] about NodeJS long-term support/LTS.
-
-[NodeJS/LTS]: https://github.com/nodejs/LTS/
+[Read more][node-lts-url] about NodeJS long-term support/LTS.
 
 ## Composability
 
@@ -84,5 +87,12 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 [depstat-url]: https://david-dm.org/iamstarkov/generator-travis
 [depstat-image]: https://david-dm.org/iamstarkov/generator-travis.svg?style=flat-square
 
+[node-lts-url]: https://github.com/nodejs/Release
+[node-lts-image]: https://raw.githubusercontent.com/nodejs/Release/master/schedule.png
+
+[node-9]: https://nodejs.org/download/release/latest-v9.x/
+[node-8]: https://nodejs.org/download/release/latest-carbon/
+[node-6]: https://nodejs.org/download/release/latest-boron/
+[node-4]: https://nodejs.org/download/release/latest-argon/
 
 [travis]: https://travis-ci.org/
