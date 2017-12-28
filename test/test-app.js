@@ -47,6 +47,10 @@ describe('travis:app', function() {
   it('uses config with extra node versions from options', function() {
     assert.fileContent('.travis.yml', /iojs/);
   });
+
+  it('includes v8', function() {
+    assert.fileContent('.travis.yml', /v8/);
+  });
 });
 
 describe('travis:app with generate-into option', function() {
@@ -88,6 +92,10 @@ describe('travis:app with generate-into option', function() {
   it('uses config with extra node versions from options', function() {
     assert.fileContent('other/.travis.yml', /iojs/);
   });
+
+  it('includes v8', function() {
+    assert.fileContent('other/.travis.yml', /v8/);
+  });
 });
 
 describe('--remove-old', function() {
@@ -127,11 +135,7 @@ describe('--remove-old', function() {
     assert.fileContent('.travis.yml', /iojs/);
   });
 
-  it('includes the latest LTS', function() {
-    assert.fileContent('.travis.yml', /- ['"]?lts\/\*/);
-  });
-
-  it('includes the latest release', function() {
-    assert.fileContent('.travis.yml', /- ['"]?node\b/);
+  it('includes v8', function() {
+    assert.fileContent('.travis.yml', /v8/);
   });
 });

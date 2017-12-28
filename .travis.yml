@@ -1,7 +1,8 @@
 language: node_js
 node_js:
-  - 8
-  - 6
-  - 4
+  - v4 # Supported until 2018-04-01
+  - v6 # Supported until 2019-04-01
+  - v8 # Supported until 2019-12-31
+  - v9 # Supported until 2018-06-30
 after_success:
   - semantic-release pre && npm publish && semantic-release post

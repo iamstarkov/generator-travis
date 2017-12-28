@@ -1,5 +1,6 @@
 language: node_js
 node_js:
-  - 7
-  - 6
-  - 4
+  - node
+  - lts/*
+  - lts/boron # Until 2019-04-18
+  - lts/argon # Until 2018-04-01
