@@ -49,6 +49,7 @@
     ]
   },
   "dependencies": {
+    "lts": "^1.0.2",
     "merge-and-concat": "^1.0.2",
     "ramda": "^0.25.0",
     "sort-object": "^3.0.2",
