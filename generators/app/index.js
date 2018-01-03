@@ -8,22 +8,26 @@ var ramda = require('ramda');
 var got = require('got');
 
 var supportedVersions = got('https://nodejs.org/dist/index.json', {
-  json: true,
-}).then(function(response) {
-  var releases = response.body;
+  json: true
+})
+  .then(function(response) {
+    var releases = response.body;
 
-  return ramda.uniq(
-    [releases[0]]
-      .concat(
-        releases.filter(function(release) {
-          return release.lts;
+    return ramda.uniq(
+      [releases[0]]
+        .concat(
+          releases.filter(function(release) {
+            return release.lts;
+          })
+        )
+        .map(function(release) {
+          return release.version.split('.')[0];
         })
-      )
-      .map(function(release) {
-        return release.version.split('.')[0];
-      })
-  );
-});
+    );
+  })
+  .catch(function() {
+    return ['lts/*'];
+  });
 
 function sortByKeys(a, b) {
   return travisConfigKeys.indexOf(a) < travisConfigKeys.indexOf(b) ? -1 : 1;

@@ -31,7 +31,9 @@ The configuration template includes the following NodeJS versions:
 
 ## NodeJS versions in the config
 
-Every LTS-supported version is included plus current one if its not LTS-supported. Once NodeJS versions list is changed this package will get a minor version update.
+Every LTS-supported version is included plus current one if its not LTS-supported.
+The list of the versions is loaded from <https://nodejs.org/dist/index.json> at
+run-time.
 
 * NodeJS v10 will be added on 2018-04-30 and removed on **2021-04-01**.
 * NodeJS [v9][node-9] will be removed on **2018-06-30**.
