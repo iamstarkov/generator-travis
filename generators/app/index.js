@@ -43,13 +43,6 @@ module.exports = class extends Generator {
       defaults: '',
       desc: 'Relocate the location of the generated files.',
     });
-
-    this.option('removeOld', {
-      type: Boolean,
-      required: false,
-      defaults: false,
-      desc: 'Remove old versions from the current .travis.yml.',
-    });
   }
 
   writing() {
@@ -63,10 +56,6 @@ module.exports = class extends Generator {
           )
         )
       : {};
-    if (this.options.removeOld) {
-      existing.node_js = [];
-    }
-
     var defaults = yaml.parse(this.fs.read(this.templatePath('travisyml')));
 
     return supportedVersions.then(supportedVersions => {

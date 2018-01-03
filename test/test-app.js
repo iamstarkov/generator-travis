@@ -37,7 +37,6 @@ describe('travis:app', function() {
 
   it('extends existing config', function() {
     assert.fileContent('.travis.yml', /bower install/);
-    assert.fileContent('.travis.yml', /stable/);
   });
 
   it('uses config from options', function() {
@@ -82,7 +81,6 @@ describe('travis:app with generate-into option', function() {
 
   it('extends existing config', function() {
     assert.fileContent('other/.travis.yml', /bower install/);
-    assert.fileContent('other/.travis.yml', /stable/);
   });
 
   it('uses config from options', function() {
@@ -95,47 +93,5 @@ describe('travis:app with generate-into option', function() {
 
   it('includes v8', function() {
     assert.fileContent('other/.travis.yml', /v8/);
-  });
-});
-
-describe('--remove-old', function() {
-  before(function(done) {
-    helpers
-      .run(path.join(__dirname, '../generators/app'))
-      .withOptions({
-        config: {
-          node_js: ['iojs'],
-          after_script: ['npm run coveralls'],
-        },
-        removeOld: true,
-      })
-      .on(
-        'ready',
-        function(gen) {
-          gen.fs.write(gen.destinationPath('.travis.yml'), yamlExistingConfig);
-        }.bind(this)
-      )
-      .on('end', done);
-  });
-
-  it('creates config', function() {
-    assert.file('.travis.yml');
-  });
-
-  it('extends existing config', function() {
-    assert.fileContent('.travis.yml', /bower install/);
-    assert.noFileContent('.travis.yml', /stable/);
-  });
-
-  it('uses config from options', function() {
-    assert.fileContent('.travis.yml', /npm run coveralls/);
-  });
-
-  it('uses config with extra node versions from options', function() {
-    assert.fileContent('.travis.yml', /iojs/);
-  });
-
-  it('includes v8', function() {
-    assert.fileContent('.travis.yml', /v8/);
   });
 });
