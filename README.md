@@ -41,7 +41,7 @@ run-time.
 * NodeJS [v6][node-6] will be removed on **2019-04-18**.
 * NodeJS [v4][node-4] will be removed on **2018-04-01**.
 
-**All other versions, except for those added through `options.config`](#compose),
+**All other versions, [except for those added through `options.config`](#compose),
 are removed from the config.**
 
 [![NodeJS LTS Timeline][node-lts-image]][node-lts-url]
