@@ -39,6 +39,10 @@ describe('travis:app', function() {
     assert.fileContent('.travis.yml', /bower install/);
   });
 
+  it('discards versions from existing config', function() {
+    assert.noFileContent('.travis.yml', /stable/);
+  });
+
   it('uses config from options', function() {
     assert.fileContent('.travis.yml', /npm run coveralls/);
   });
@@ -81,6 +85,10 @@ describe('travis:app with generate-into option', function() {
 
   it('extends existing config', function() {
     assert.fileContent('other/.travis.yml', /bower install/);
+  });
+
+  it('discards versions from existing config', function() {
+    assert.noFileContent('other/.travis.yml', /stable/);
   });
 
   it('uses config from options', function() {

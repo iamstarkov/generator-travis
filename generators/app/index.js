@@ -56,6 +56,8 @@ module.exports = class extends Generator {
           )
         )
       : {};
+    existing.node_js = [];
+
     var defaults = yaml.parse(this.fs.read(this.templatePath('travisyml')));
 
     return supportedVersions.then(supportedVersions => {
