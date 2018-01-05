@@ -5,6 +5,29 @@ var sort = require('sort-object');
 var mergeAndConcat = require('merge-and-concat');
 var travisConfigKeys = require('travis-config-keys');
 var ramda = require('ramda');
+var got = require('got');
+
+var supportedVersions = got('https://nodejs.org/dist/index.json', {
+  json: true
+})
+  .then(function(response) {
+    var releases = response.body;
+
+    return ramda.uniq(
+      [releases[0]]
+        .concat(
+          releases.filter(function(release) {
+            return release.lts;
+          })
+        )
+        .map(function(release) {
+          return release.version.split('.')[0];
+        })
+    );
+  })
+  .catch(function() {
+    return ['lts/*'];
+  });
 
 function sortByKeys(a, b) {
   return travisConfigKeys.indexOf(a) < travisConfigKeys.indexOf(b) ? -1 : 1;
@@ -33,13 +56,22 @@ module.exports = class extends Generator {
           )
         )
       : {};
+    existing.node_js = [];
+
     var defaults = yaml.parse(this.fs.read(this.templatePath('travisyml')));
-    var results = mergeAndConcat(existing, optional, defaults);
-    var sortedResults = sort(results, { sort: sortByKeys });
-    sortedResults.node_js = ramda.uniq(sortedResults.node_js);
-    this.fs.write(
-      this.destinationPath(this.options.generateInto, '.travis.yml'),
-      yaml.stringify(sortedResults, 3, 2)
-    );
+
+    return supportedVersions.then(supportedVersions => {
+      defaults.node_js = supportedVersions;
+
+      var results = mergeAndConcat(existing, optional, defaults);
+      var sortedResults = sort(results, { sort: sortByKeys });
+      sortedResults.node_js = ramda.uniq(sortedResults.node_js);
+      var sortedResultsString = yaml.stringify(sortedResults, 3, 2);
+
+      this.fs.write(
+        this.destinationPath(this.options.generateInto, '.travis.yml'),
+        sortedResultsString
+      );
+    });
   }
 };

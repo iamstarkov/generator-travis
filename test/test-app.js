@@ -39,12 +39,20 @@ describe('travis:app', function() {
     assert.fileContent('.travis.yml', /bower install/);
   });
 
+  it('discards versions from existing config', function() {
+    assert.noFileContent('.travis.yml', /stable/);
+  });
+
   it('uses config from options', function() {
     assert.fileContent('.travis.yml', /npm run coveralls/);
   });
 
   it('uses config with extra node versions from options', function() {
     assert.fileContent('.travis.yml', /iojs/);
+  });
+
+  it('includes v8', function() {
+    assert.fileContent('.travis.yml', /v8/);
   });
 });
 
@@ -79,11 +87,19 @@ describe('travis:app with generate-into option', function() {
     assert.fileContent('other/.travis.yml', /bower install/);
   });
 
+  it('discards versions from existing config', function() {
+    assert.noFileContent('other/.travis.yml', /stable/);
+  });
+
   it('uses config from options', function() {
     assert.fileContent('other/.travis.yml', /npm run coveralls/);
   });
 
   it('uses config with extra node versions from options', function() {
     assert.fileContent('other/.travis.yml', /iojs/);
+  });
+
+  it('includes v8', function() {
+    assert.fileContent('other/.travis.yml', /v8/);
   });
 });
