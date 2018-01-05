@@ -3,14 +3,14 @@
 var path = require('path');
 var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
-var yaml = require('yamljs');
+var yaml = require('js-yaml');
 
 var existingConfig = {
   language: 'node_js',
   node_js: ['stable', 'iojs'],
   before_script: ['bower install'],
 };
-var yamlExistingConfig = yaml.stringify(existingConfig, 3, 2);
+var yamlExistingConfig = yaml.safeDump(existingConfig, 3, 2);
 
 describe('travis:app', function() {
   before(function(done) {

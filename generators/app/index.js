@@ -1,6 +1,6 @@
 'use strict';
 var Generator = require('yeoman-generator');
-var yaml = require('yamljs');
+var yaml = require('js-yaml');
 var sort = require('sort-object');
 var mergeAndConcat = require('merge-and-concat');
 var travisConfigKeys = require('travis-config-keys');
@@ -8,7 +8,7 @@ var ramda = require('ramda');
 var got = require('got');
 
 var supportedVersions = got('https://nodejs.org/dist/index.json', {
-  json: true
+  json: true,
 })
   .then(function(response) {
     var releases = response.body;
@@ -50,7 +50,7 @@ module.exports = class extends Generator {
     var existing = this.fs.exists(
       this.destinationPath(this.options.generateInto, '.travis.yml')
     )
-      ? yaml.parse(
+      ? yaml.safeLoad(
           this.fs.read(
             this.destinationPath(this.options.generateInto, '.travis.yml')
           )
@@ -58,7 +58,7 @@ module.exports = class extends Generator {
       : {};
     existing.node_js = [];
 
-    var defaults = yaml.parse(this.fs.read(this.templatePath('travisyml')));
+    var defaults = yaml.safeLoad(this.fs.read(this.templatePath('travisyml')));
 
     return supportedVersions.then(supportedVersions => {
       defaults.node_js = supportedVersions;
@@ -66,7 +66,7 @@ module.exports = class extends Generator {
       var results = mergeAndConcat(existing, optional, defaults);
       var sortedResults = sort(results, { sort: sortByKeys });
       sortedResults.node_js = ramda.uniq(sortedResults.node_js);
-      var sortedResultsString = yaml.stringify(sortedResults, 3, 2);
+      var sortedResultsString = yaml.safeDump(sortedResults, 3, 2);
 
       this.fs.write(
         this.destinationPath(this.options.generateInto, '.travis.yml'),
