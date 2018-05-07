@@ -3,6 +3,5 @@ node_js:
   - v9
   - v8
   - v6
-  - v4
 after_success:
   - semantic-release pre && npm publish && semantic-release post
