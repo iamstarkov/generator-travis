@@ -1,8 +1,8 @@
 language: node_js
 node_js:
+  - v10
   - v9
   - v8
   - v6
-  - v4
 after_success:
   - semantic-release pre && npm publish && semantic-release post
