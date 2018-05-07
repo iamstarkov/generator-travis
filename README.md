@@ -15,7 +15,6 @@ The configuration template includes the following NodeJS versions:
 * [v9][node-9] (Until **2018-06-30**)
 * [v8][node-8] (Until **2019-12-31**)
 * [v6][node-6] (Until **2019-04-18**)
-* [v4][node-4] (Until **2018-04-01**)
 
 [yo]: http://yeoman.io/
 [nodejs-get-started]: http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
@@ -39,7 +38,6 @@ run-time.
 * NodeJS [v9][node-9] will be removed on **2018-06-30**.
 * NodeJS [v8][node-8] will be removed on **2019-12-31**.
 * NodeJS [v6][node-6] will be removed on **2019-04-18**.
-* NodeJS [v4][node-4] will be removed on **2018-04-01**.
 
 **All other versions, [except for those added through `options.config`](#compose),
 are removed from the config.**
@@ -99,6 +97,5 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 [node-9]: https://nodejs.org/download/release/latest-v9.x/
 [node-8]: https://nodejs.org/download/release/latest-carbon/
 [node-6]: https://nodejs.org/download/release/latest-boron/
-[node-4]: https://nodejs.org/download/release/latest-argon/
 
 [travis]: https://travis-ci.org/
