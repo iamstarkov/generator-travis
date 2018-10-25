@@ -45,19 +45,21 @@ module.exports = class extends Generator {
     });
   }
 
-  async prompting() {
+  prompting() {
     const questions = [
       {
         type: 'input',
         name: 'nodejsVersions',
-        message: 'Enter nodejs versions (comma to split)',
+        message: 'Enter Node versions(comma separated)',
         filter(words) {
-          return !words ? [] : words.split(/\s*,\s*/g);
+          return !words ? [] : words.split(',');
         },
       },
     ];
 
-    this.answers = await this.prompt(questions);
+    return this.prompt(questions).then(props => {
+      this.props = props;
+    });
   }
 
   writing() {
@@ -81,7 +83,7 @@ module.exports = class extends Generator {
         defaults,
         optional,
         { node_js: supportedVersions },
-        { node_js: this.answers.nodejsVersions }
+        { node_js: this.props.nodejsVersions }
       );
       var sortedResults = sort(results, { sort: sortByKeys });
       sortedResults.node_js = ramda.uniq(sortedResults.node_js);
