@@ -16,6 +16,7 @@ describe('travis:app', function() {
   before(function(done) {
     helpers
       .run(path.join(__dirname, '../generators/app'))
+      .withPrompts({ nodejsVersions: [] })
       .withOptions({
         config: {
           node_js: ['iojs'],
@@ -51,6 +52,11 @@ describe('travis:app', function() {
     assert.fileContent('.travis.yml', /iojs/);
   });
 
+  it('user not manually entered version', function() {
+    assert.noFileContent('.travis.yml', /v10.4.1/);
+    assert.noFileContent('.travis.yml', /v11.0.0/);
+  });
+
   it('includes v8', function() {
     assert.fileContent('.travis.yml', /v8/);
   });
@@ -60,6 +66,7 @@ describe('travis:app with generate-into option', function() {
   before(function(done) {
     helpers
       .run(path.join(__dirname, '../generators/app'))
+      .withPrompts({ nodejsVersions: ['v10.4.1', 'v11.0.0'] })
       .withOptions({
         config: {
           node_js: ['iojs'],
@@ -97,6 +104,11 @@ describe('travis:app with generate-into option', function() {
 
   it('uses config with extra node versions from options', function() {
     assert.fileContent('other/.travis.yml', /iojs/);
+  });
+
+  it('user manually entered version', function() {
+    assert.fileContent('other/.travis.yml', /v10.4.1/);
+    assert.fileContent('other/.travis.yml', /v11.0.0/);
   });
 
   it('includes v8', function() {

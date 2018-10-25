@@ -45,6 +45,21 @@ module.exports = class extends Generator {
     });
   }
 
+  async prompting() {
+    const questions = [
+      {
+        type: 'input',
+        name: 'nodejsVersions',
+        message: 'Enter nodejs versions (comma to split)',
+        filter(words) {
+          return !words ? [] : words.split(/\s*,\s*/g);
+        },
+      },
+    ];
+
+    this.answers = await this.prompt(questions);
+  }
+
   writing() {
     var optional = this.options.config || {};
     var existing = this.fs.exists(
@@ -61,9 +76,13 @@ module.exports = class extends Generator {
     var defaults = yaml.safeLoad(this.fs.read(this.templatePath('travisyml')));
 
     return supportedVersions.then(supportedVersions => {
-      defaults.node_js = supportedVersions;
-
-      var results = mergeAndConcat(existing, optional, defaults);
+      var results = mergeAndConcat(
+        existing,
+        defaults,
+        optional,
+        { node_js: supportedVersions },
+        { node_js: this.answers.nodejsVersions }
+      );
       var sortedResults = sort(results, { sort: sortByKeys });
       sortedResults.node_js = ramda.uniq(sortedResults.node_js);
       var sortedResultsString = yaml.safeDump(sortedResults, 3, 2);
