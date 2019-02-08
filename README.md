@@ -94,7 +94,7 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 [depstat-image]: https://david-dm.org/iamstarkov/generator-travis.svg?style=flat-square
 
 [node-lts-url]: https://github.com/nodejs/Release
-[node-lts-image]: https://raw.githubusercontent.com/nodejs/Release/master/schedule.png
+[node-lts-image]: https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true
 
 [node-11]: https://nodejs.org/download/release/latest-v11.x/
 [node-10]: https://nodejs.org/download/release/latest-v10.x/
