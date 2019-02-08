@@ -11,7 +11,8 @@ Travis CI uses `.travis.yml` file in the root of repository to learn about proje
 
 The configuration template includes the following NodeJS versions:
 
-* [v11][node-11] (From 2018-10-23 until **2019-06-30**)
+* v12 (From 2019-04-23 until **2022-04-30**)
+* [v11][node-11] (until **2019-06-30**)
 * [v10][node-10] (until **2021-04-01**)
 * [v9][node-9] (Until **2018-06-30**)
 * [v8][node-8] (Until **2019-12-31**)
@@ -35,7 +36,8 @@ Every LTS-supported version is included plus current one if its not LTS-supporte
 The list of the versions is loaded from <https://nodejs.org/dist/index.json> at
 run-time.
 
-* NodeJS [v11][node-11] will be added on 2018-10-23 and removed on **2019-06-30**.
+* NodeJS v12 will be added on 2019-04-23 and removed on **2022-04-30**.
+* NodeJS [v11][node-11] will be removed on **2019-06-30**.
 * NodeJS [v10][node-10] will be removed on **2021-04-01**.
 * NodeJS [v9][node-9] will be removed on **2018-06-30**.
 * NodeJS [v8][node-8] will be removed on **2019-12-31**.
