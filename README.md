@@ -11,12 +11,12 @@ Travis CI uses `.travis.yml` file in the root of repository to learn about proje
 
 The configuration template includes the following NodeJS versions:
 
-* v12 (From 2019-04-23 until **2022-04-30**)
-* [v11][node-11] (until **2019-06-30**)
+* v13 (From 2019-10-22 until **2020-06-30**)
+* [v12][node-12] (until **2022-04-30**)
+* [v11][node-11] (until **2019-06-01**)
 * [v10][node-10] (until **2021-04-01**)
-* [v9][node-9] (Until **2018-06-30**)
 * [v8][node-8] (Until **2019-12-31**)
-* [v6][node-6] (Until **2019-04-18**)
+* [v6][node-6] (Until **2019-04-30**)
 
 [yo]: http://yeoman.io/
 [nodejs-get-started]: http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
@@ -36,12 +36,12 @@ Every LTS-supported version is included plus current one if its not LTS-supporte
 The list of the versions is loaded from <https://nodejs.org/dist/index.json> at
 run-time.
 
-* NodeJS v12 will be added on 2019-04-23 and removed on **2022-04-30**.
-* NodeJS [v11][node-11] will be removed on **2019-06-30**.
+* NodeJS v13 will be added on 2019-10-22 and removed on **2020-06-30**.
+* NodeJS [v12][node-12] will be removed on **2022-04-30**.
+* NodeJS [v11][node-11] will be removed on **2019-06-01**.
 * NodeJS [v10][node-10] will be removed on **2021-04-01**.
-* NodeJS [v9][node-9] will be removed on **2018-06-30**.
 * NodeJS [v8][node-8] will be removed on **2019-12-31**.
-* NodeJS [v6][node-6] will be removed on **2019-04-18**.
+* NodeJS [v6][node-6] will be removed on **2019-04-30**.
 
 **All other versions, [except for those added through `options.config`](#compose),
 are removed from the config.**
@@ -98,9 +98,9 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 [node-lts-url]: https://github.com/nodejs/Release
 [node-lts-image]: https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true
 
+[node-12]: https://nodejs.org/download/release/latest-v12.x/
 [node-11]: https://nodejs.org/download/release/latest-v11.x/
 [node-10]: https://nodejs.org/download/release/latest-v10.x/
-[node-9]: https://nodejs.org/download/release/latest-v9.x/
 [node-8]: https://nodejs.org/download/release/latest-carbon/
 [node-6]: https://nodejs.org/download/release/latest-boron/
 
