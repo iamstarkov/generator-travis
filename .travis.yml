@@ -4,6 +4,5 @@ node_js:
   - v11
   - v10
   - v8
-  - v6
 after_success:
   - semantic-release pre && npm publish && semantic-release post
