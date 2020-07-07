@@ -11,11 +11,10 @@ Travis CI uses `.travis.yml` file in the root of repository to learn about proje
 
 The configuration template includes the following NodeJS versions:
 
-* v14 (From 2020-10-31 until **2023-04-30**)
-* [v13][node-13] (until **2020-06-30**)
+* v15 (From 2020-10-21 until **2021-06-30**)
+* [v14][node-14] (until **2023-04-30**)
 * [v12][node-12] (until **2022-04-30**)
 * [v10][node-10] (until **2021-04-01**)
-* [v8][node-8] (Until **2019-12-31**)
 
 [yo]: http://yeoman.io/
 [nodejs-get-started]: http://docs.travis-ci.com/user/languages/javascript-with-nodejs/
@@ -35,11 +34,10 @@ Every LTS-supported version is included plus current one if its not LTS-supporte
 The list of the versions is loaded from <https://nodejs.org/dist/index.json> at
 run-time.
 
-* NodeJS v14 will be added on 2020-10-31 and removed on **2023-04-30**.
-* NodeJS [v13][node-13] will be removed on **2020-06-30**.
+* NodeJS v15 will be added on 2020-10-21 and removed on **2021-06-30**.
+* NodeJS [v14][node-14] will be removed on **2023-04-30**.
 * NodeJS [v12][node-12] will be removed on **2022-04-30**.
 * NodeJS [v10][node-10] will be removed on **2021-04-01**.
-* NodeJS [v8][node-8] will be removed on **2019-12-31**.
 
 **All other versions, [except for those added through `options.config`](#compose),
 are removed from the config.**
@@ -96,9 +94,8 @@ MIT © [Vladimir Starkov](https://iamstarkov.com)
 [node-lts-url]: https://github.com/nodejs/Release
 [node-lts-image]: https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true
 
-[node-13]: https://nodejs.org/download/release/latest-v13.x/
+[node-14]: https://nodejs.org/download/release/latest-v14.x/
 [node-12]: https://nodejs.org/download/release/latest-v12.x/
 [node-10]: https://nodejs.org/download/release/latest-v10.x/
-[node-8]: https://nodejs.org/download/release/latest-carbon/
 
 [travis]: https://travis-ci.org/
